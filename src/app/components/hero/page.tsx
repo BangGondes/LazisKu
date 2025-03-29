@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Search, Menu, X } from "lucide-react";
 import Link from "next/link";
 
-export default function Header() {
+export default function Hero() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
