@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Search, Menu, X } from "lucide-react";
+import { Menu, X, Calculator } from "lucide-react";
 import Link from "next/link";
 
 export default function Header() {
@@ -32,17 +32,19 @@ export default function Header() {
           isOpen ? "block" : "hidden lg:flex"
         }`}
       >
-        {/* Search Bar di Mobile */}
-        <div className="flex items-center border border-green-400 rounded-full overflow-hidden shadow-sm focus-within:ring-2 focus-within:ring-green-500 transition-all mt-2 lg:hidden w-full">
-          <input
-            type="text"
-            placeholder="Search..."
-            aria-label="Search"
-            className="p-1 text-black w-full border-none focus:outline-none"
-          />
-          <button className="bg-green-600 hover:bg-green-700 px-3 py-2 flex items-center justify-center text-white transition-all">
-            <Search size={18} />
-          </button>
+        {/* kalkulator B di Mobile */}
+        <div className="flex items-center justify-center w-full lg:hidden gap-6 mt-4 flex-wrap">
+          <Link href="/donasi">
+            <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full text-white transition-all w-full sm:w-auto">
+              Zakat Now
+            </button>
+          </Link>
+
+          <Link href="/kalkulator">
+            <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full text-white transition-all flex items-center justify-center w-full sm:w-auto">
+              <span className="mr-2">Kalkulator</span> <Calculator size={20} />
+            </button>
+          </Link>
         </div>
 
         <div className="flex flex-col lg:flex-row text-green-600 items-center space-y-4 lg:space-y-0 lg:space-x-6 mt-4 lg:mt-0">
@@ -81,7 +83,7 @@ export default function Header() {
       </nav>
 
       {/* Search Bar di Desktop */}
-      <div className="hidden lg:flex items-center border border-green-400 rounded-full overflow-hidden shadow-sm focus-within:ring-2 focus-within:ring-green-500 transition-all">
+      {/* <div className="hidden lg:flex items-center border border-green-400 rounded-full overflow-hidden shadow-sm focus-within:ring-2 focus-within:ring-green-500 transition-all">
         <input
           type="text"
           placeholder="Search..."
@@ -91,6 +93,20 @@ export default function Header() {
         <button className="bg-green-600 hover:bg-green-700 p-1.5 flex items-center justify-center text-white transition-all">
           <Search size={20} />
         </button>
+      </div> */}
+      {/* Tombol kalkulator */}
+      <div className="hidden lg:flex items-center space-x-4">
+        <Link href="/donasi">
+          <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center justify-center text-white transition-all">
+            Zakat Now
+          </button>
+        </Link>
+
+        <Link href="/kalkulator">
+          <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center justify-center text-white transition-all">
+            <span> kalkulator</span> <Calculator size={20} />
+          </button>
+        </Link>
       </div>
     </header>
   );
