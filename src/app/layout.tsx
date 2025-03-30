@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Head from "next/head"; // ✅ Import Head dari Next.js
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,36 +20,19 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
   },
-  openGraph: {  
-    title: "Lazisku",
-    description: "Lazisku - Layanan Zakat Infaq dan Sedekah",
-    url: "https://lazisku.com",
-    siteName: "Lazisku",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Lazisku",
-    description: "Lazisku - Layanan Zakat Infaq dan Sedekah",
-    images: ["/og-image.png"],
-    creator: "@lazisku",
-    site: "@lazisku",
-  },
+  themeColor: "#22c55e", // ✅ Warna hijau cerah (green-500)
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="id" className="scroll-smooth">
+      <Head>
+        {" "}
+        {/* ✅ Gunakan next/head */}
+        <meta name="theme-color" content="#22c55e" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

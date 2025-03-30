@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 const images = [
   "https://cdn.pixabay.com/photo/2014/12/19/17/00/child-573351_1280.jpg",
@@ -33,7 +34,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center py-24 px-10 bg-gray-50 gap-16 mb-4 shadow-lg" >
+    <Card className="flex flex-col lg:flex-row items-center justify-center py-24 px-10 bg-gray-50 gap-16 mb-4 shadow-lg" >
       {/* Kontainer Teks */}
       <div className="flex-1 text-center lg:text-left">
         <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
@@ -79,6 +80,6 @@ export default function Hero() {
           <ChevronRight size={32} />
         </button>
       </div>
-    </div>
+    </Card>
   );
 }
