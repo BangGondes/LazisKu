@@ -35,14 +35,13 @@ export default function Header() {
         {/* kalkulator B di Mobile */}
         <div className="flex items-center justify-center w-full lg:hidden gap-6 mt-4 flex-wrap">
           <Link href="/donasi">
-            <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full text-white transition-all w-full sm:w-auto">
+            <button className="bg-green-600 hover:bg-green-700 px-4 py-2.5 rounded-full flex items-center justify-center text-white transition-all">
               Zakat Now
             </button>
           </Link>
-
           <Link href="/kalkulator">
-            <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full text-white transition-all flex items-center justify-center w-full sm:w-auto">
-              <span className="mr-2">Kalkulator</span> <Calculator size={20} />
+            <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center justify-center text-white transition-all">
+              <span> kalkulator Zakat</span> <Calculator size={20} />
             </button>
           </Link>
         </div>
@@ -96,15 +95,15 @@ export default function Header() {
       </div> */}
       {/* Tombol kalkulator */}
       <div className="hidden lg:flex items-center space-x-4">
+     
         <Link href="/donasi">
           <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center justify-center text-white transition-all">
             Zakat Now
           </button>
         </Link>
-
         <Link href="/kalkulator">
           <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center justify-center text-white transition-all">
-            <span> kalkulator</span> <Calculator size={20} />
+            <span> kalkulator Zakat</span> <Calculator size={20} />
           </button>
         </Link>
       </div>
