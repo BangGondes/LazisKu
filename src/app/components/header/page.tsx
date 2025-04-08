@@ -7,7 +7,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex justify-between items-center p-4 bg-white shadow-md relative">
+    <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center p-4 bg-white shadow-md lg:p-6">
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2">
         <p className="text-2xl font-extrabold text-white bg-green-500 rounded-full p-1 w-10 h-10 flex items-center justify-center font-poppins">
@@ -95,7 +95,6 @@ export default function Header() {
       </div> */}
       {/* Tombol kalkulator */}
       <div className="hidden lg:flex items-center space-x-4">
-     
         <Link href="/donasi">
           <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center justify-center text-white transition-all">
             Zakat Now

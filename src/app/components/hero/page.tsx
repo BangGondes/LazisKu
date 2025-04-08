@@ -13,13 +13,12 @@ const images = [
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 = next, -1 = prev
+  const [direction, setDirection] = useState(1);
 
-  // Auto slideshow setiap 3 detik
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 3000);
+    }, 5000); // Lebih santai 5 detik
     return () => clearInterval(interval);
   }, []);
 
@@ -34,29 +33,28 @@ export default function Hero() {
   };
 
   return (
-    <Card className="flex flex-col lg:flex-row items-center justify-center py-24 px-10 bg-gray-50 gap-16 mb-4 shadow-lg" >
+    <Card className="mt-24 border-none shadow-xl bg-gray-50 flex flex-col-reverse lg:flex-row items-center justify-between px-4 py-6 sm:px-6 sm:py-10 lg:p-16 gap-6 lg:gap-16">
       {/* Kontainer Teks */}
       <div className="flex-1 text-center lg:text-left">
-        <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
-          Your Journey Starts Here
+        <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+          Mulai Perjalanan Kebaikanmu
         </h1>
         <p className="mt-4 text-lg text-gray-600">
-          Discover the best way to elevate your experience with our exclusive
-          services.
+          Dukung program zakat, infaq, dan sedekah bersama LAZISKU.
         </p>
-        <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg transition duration-300 hover:bg-blue-700 hover:shadow-xl">
-          Get Started
+        <button className="mt-6 bg-emerald-600 text-white px-6 py-3 rounded-lg shadow hover:bg-emerald-700 transition duration-300">
+          Zakat Sekarang
         </button>
       </div>
 
       {/* Kontainer Slideshow */}
       <div className="flex-1 flex justify-center relative w-full max-w-md">
-        <div className="relative w-full h-80 overflow-hidden rounded-lg shadow-lg">
+        <div className="relative w-full h-80 overflow-hidden rounded-xl shadow-lg">
           <AnimatePresence custom={direction} initial={false}>
             <motion.img
               key={index}
               src={images[index]}
-              alt="Slideshow Image"
+              alt="Slideshow"
               className="absolute w-full h-full object-cover"
               initial={{ x: direction * 300, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -69,15 +67,15 @@ export default function Hero() {
         {/* Tombol Navigasi */}
         <button
           onClick={handlePrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 text-white p-3  transition duration-300"
+          className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-800 bg-white/70 p-2 rounded-full shadow hover:bg-white transition"
         >
-          <ChevronLeft size={32} />
+          <ChevronLeft size={28} />
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 text-white p-3  transition duration-300"
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-800 bg-white/70 p-2 rounded-full shadow hover:bg-white transition"
         >
-          <ChevronRight size={32} />
+          <ChevronRight size={28} />
         </button>
       </div>
     </Card>
