@@ -33,9 +33,9 @@ export default function Hero() {
   };
 
   return (
-    <Card className="mt-24 border-none shadow-xl bg-gray-50 flex flex-col-reverse lg:flex-row items-center justify-between px-4 py-6 sm:px-6 sm:py-10 lg:p-16 gap-6 lg:gap-16">
+    <Card className="mt-0 border-none shadow-xl bg-gray-50 flex flex-col-reverse lg:flex-row items-center justify-between px-4 py-6 sm:px-6 sm:py-10 lg:p-16 gap-6 lg:gap-16">
       {/* Kontainer Teks */}
-      <div className="flex-1 text-center lg:text-left">
+      <div className="mt-24 flex-1 text-center lg:text-left">
         <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
           Mulai Perjalanan Kebaikanmu
         </h1>
@@ -48,7 +48,7 @@ export default function Hero() {
       </div>
 
       {/* Kontainer Slideshow */}
-      <div className="flex-1 flex justify-center relative w-full max-w-md">
+      <div className="mt-24 flex-1 flex justify-center relative w-full max-w-md">
         <div className="relative w-full h-80 overflow-hidden rounded-xl shadow-lg">
           <AnimatePresence custom={direction} initial={false}>
             <motion.img
