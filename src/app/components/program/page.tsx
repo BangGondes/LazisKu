@@ -18,7 +18,7 @@ export default function Program() {
     },
   ];
 
-  return (  
+  return (
     <>
       <div className="flex flex-col items-center text-center py-16 px-6 animate-fadeIn">
         <h1 className="text-4xl font-extrabold text-gray-800 leading-snug font-[Poppins]">
@@ -35,7 +35,7 @@ export default function Program() {
           {programList.map((program, index) => (
             <div
               key={index}
-              className="flex flex-col bg-white rounded-2xl p-8 shadow-lg text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl"
+              className="flex flex-col bg-white rounded-2xl p-8 shadow-lg text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl active:scale-95 animate-fadeIn"
             >
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 {program.title}
