@@ -42,7 +42,7 @@ export default function Hero() {
         <p className="mt-4 text-lg text-gray-600">
           Dukung program zakat, infaq, dan sedekah bersama LAZISKU.
         </p>
-        <button className="mt-6 bg-emerald-600 text-white px-6 py-3 rounded-lg shadow hover:bg-emerald-700 transition duration-300">
+        <button className="mt-6 bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700 transition duration-300">
           Zakat Sekarang
         </button>
       </div>
