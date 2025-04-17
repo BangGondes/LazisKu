@@ -1,5 +1,6 @@
 // app/program/[id]/page.tsx
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 // Tipe data untuk Program
 interface Program {
@@ -39,18 +40,17 @@ export default function ProgramDetail({ params }: { params: { id: string } }) {
 
   return (
     <div className="flex flex-col items-center container py-16 px-6 text-center">
-      {/* Menambahkan gambar */}
-      <img
-        src={program.image}
-        alt={program.title}
-        width={600} // Atur ukuran gambar
-        height={400} // Atur ukuran gambar
-        className="rounded-lg mb-8"
-      />
-
       <h1 className="text-4xl font-extrabold text-gray-800 mb-4">
         {program.title}
       </h1>
+
+      <Image
+        src={program.image}
+        width={600} // Atur ukuran gambar
+        height={400} // Atur ukuran gambar
+        className="rounded-lg mb-8"
+        alt={""}
+      />
 
       <p className="max-w-2xl text-lg text-gray-600">{program.description}</p>
       <div className="mt-8">
