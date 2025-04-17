@@ -1,8 +1,6 @@
-import Image from "next/image"; // Tambahkan import ini
-
 // app/program/[id]/page.tsx
 import { notFound } from "next/navigation";
-import Link from "next/link"; 
+
 // Tipe data untuk Program
 interface Program {
   id: string;
@@ -33,6 +31,7 @@ const programList: Program[] = [
   },
 ];
 
+// Pastikan props params diterima dengan benar
 export default function ProgramDetail({ params }: { params: { id: string } }) {
   const program = programList.find((p) => p.id === params.id);
 
@@ -41,12 +40,12 @@ export default function ProgramDetail({ params }: { params: { id: string } }) {
   return (
     <div className="flex flex-col items-center container py-16 px-6 text-center">
       {/* Menambahkan gambar */}
-      <Image
-        src={program.image} // Path gambar sesuai dengan program
-        alt={program.title} // Alt text untuk SEO dan aksesibilitas
+      <img
+        src={program.image}
+        alt={program.title}
         width={600} // Atur ukuran gambar
         height={400} // Atur ukuran gambar
-        className="rounded-lg mb-8" // Styling tambahan (opsional)
+        className="rounded-lg mb-8"
       />
 
       <h1 className="text-4xl font-extrabold text-gray-800 mb-4">
@@ -55,12 +54,9 @@ export default function ProgramDetail({ params }: { params: { id: string } }) {
 
       <p className="max-w-2xl text-lg text-gray-600">{program.description}</p>
       <div className="mt-8">
-        <Link
-          href="/donasi"
-          className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300"
-        >
+        <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300">
           Donasi Sekarang
-        </Link>
+        </button>
       </div>
     </div>
   );
