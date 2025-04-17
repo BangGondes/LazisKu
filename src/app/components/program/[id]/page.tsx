@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 
 // Tipe data untuk Program
 interface Program {
@@ -8,8 +8,8 @@ interface Program {
 }
 
 const ProgramDetail = () => {
-  const router = useRouter();
-  const { id } = router.query;
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
 
   // Data program yang dapat diperluas jika diambil dari API
   const programList: Program[] = [
