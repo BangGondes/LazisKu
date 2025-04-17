@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-
 // Tipe data untuk Program
 interface Program {
   id: string;
