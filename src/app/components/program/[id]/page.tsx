@@ -1,50 +1,67 @@
-"use client";
+import Image from "next/image"; // Tambahkan import ini
 
-import { useSearchParams } from "next/navigation";
-
+// app/program/[id]/page.tsx
+import { notFound } from "next/navigation";
+import Link from "next/link"; 
 // Tipe data untuk Program
 interface Program {
   id: string;
   title: string;
   description: string;
+  image: string; // Menambahkan properti image
 }
 
-const ProgramDetail = () => {
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+const programList: Program[] = [
+  {
+    id: "beasiswa-santri",
+    title: "Beasiswa Santri",
+    description: "Bantuan pendidikan untuk santri kurang mampu.",
+    image: "/images/beasiswa-santri.jpg", // Gambar untuk program ini
+  },
+  {
+    id: "orang-tua-asuh",
+    title: "Orang Tua Asuh",
+    description:
+      "Program Orang Tua Asuh Santri Yatim Piatu adalah inisiatif mulia dari Pondok Pesantren Khoiro Ummah yang bertujuan untuk memberikan dukungan penuh kepada para santri yatim dan yatim piatu dalam menempuh pendidikan agama dan umum. Melalui program ini, kami mengajak para dermawan untuk mengambil peran sebagai ‘orang tua asuh’...",
+    image: "/images/orang-tua-asuh.jpg", // Gambar untuk program ini
+  },
+  {
+    id: "pembangunan-pondok",
+    title: "Pembangunan Pondok",
+    description: "Ayo bantu renovasi dan pembangunan pondok pesantren.",
+    image: "/images/pembangunan-pondok.jpg", // Gambar untuk program ini
+  },
+];
 
-  // Data program yang dapat diperluas jika diambil dari API
-  const programList: Program[] = [
-    {
-      id: "beasiswa-santri",
-      title: "Beasiswa Santri",
-      description: "Bantuan pendidikan untuk santri kurang mampu.",
-    },
-    {
-      id: "orang-tua-asuh",
-      title: "Orang Tua Asuh",
-      description:
-        "Program Orang Tua Asuh Santri Yatim Piatu adalah inisiatif mulia dari Pondok Pesantren Khoiro Ummah yang bertujuan untuk memberikan dukungan penuh kepada para santri yatim dan yatim piatu dalam menempuh pendidikan agama dan umum. Melalui program ini, kami mengajak para dermawan untuk mengambil peran sebagai ‘orang tua asuh’ yang peduli terhadap masa depan generasi Islam yang kurang beruntung. Tujuan Program, Bentuk Bantuan Orang Tua Asuh, Nominal Donasi & Skema Asuh, Manfaat Menjadi Orang Tua Asuh, dan banyak lagi...",
-    },
-    {
-      id: "pembangunan-pondok",
-      title: "Pembangunan Pondok",
-      description: "Ayo bantu renovasi dan pembangunan pondok pesantren.",
-    },
-  ];
+export default function ProgramDetail({ params }: { params: { id: string } }) {
+  const program = programList.find((p) => p.id === params.id);
 
-  // Cari program berdasarkan id
-  const program = programList.find((program) => program.id === id);
-
-  if (!program) return <p>Program tidak ditemukan!</p>;
+  if (!program) return notFound(); // otomatis ke halaman 404 bawaan next
 
   return (
-    <div className="container py-16 px-6">
-      <h1 className="text-4xl font-extrabold text-gray-800">{program.title}</h1>
-      <p className="mt-4 text-lg text-gray-600">{program.description}</p>
-      {/* Kamu bisa menambahkan elemen lain seperti gambar, tombol donasi, dll. */}
+    <div className="flex flex-col items-center container py-16 px-6 text-center">
+      {/* Menambahkan gambar */}
+      <Image
+        src={program.image} // Path gambar sesuai dengan program
+        alt={program.title} // Alt text untuk SEO dan aksesibilitas
+        width={600} // Atur ukuran gambar
+        height={400} // Atur ukuran gambar
+        className="rounded-lg mb-8" // Styling tambahan (opsional)
+      />
+
+      <h1 className="text-4xl font-extrabold text-gray-800 mb-4">
+        {program.title}
+      </h1>
+
+      <p className="max-w-2xl text-lg text-gray-600">{program.description}</p>
+      <div className="mt-8">
+        <Link
+          href="/donasi"
+          className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300"
+        >
+          Donasi Sekarang
+        </Link>
+      </div>
     </div>
   );
-};
-
-export default ProgramDetail;
+}

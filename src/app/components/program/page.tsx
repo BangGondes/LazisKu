@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+
+const MotionLink = motion(Link);
 // Tipe data untuk Program
 interface Program {
   title: string;
@@ -15,18 +17,18 @@ export default function Program() {
     {
       title: "Beasiswa Santri",
       description: "Bantuan pendidikan untuk santri kurang mampu.",
-      link: "/program/beasiswa-santri",
+      link: "/components/program/beasiswa-santri",
     },
     {
       title: "Orang Tua Asuh",
       description:
         "Program Orang Tua Asuh Santri Yatim Piatu adalah inisiatif mulia dari Pondok Pesantren Khoiro Ummah yang bertujuan untuk memberikan dukungan penuh kepada para santri yatim dan yatim piatu dalam menempuh pendidikan agama dan umum. Melalui program ini, kami mengajak para dermawan untuk mengambil peran sebagai ‘orang tua asuh’ yang peduli terhadap masa depan generasi Islam yang kurang beruntung. Tujuan Program, Bentuk Bantuan Orang Tua Asuh, Nominal Donasi & Skema Asuh, Manfaat Menjadi Orang Tua Asuh, dan banyak lagi...",
-      link: "/program/orang-tua-asuh",
+      link: "/components/program/orang-tua-asuh",
     },
     {
       title: "Pembangunan Pondok",
       description: "Ayo bantu renovasi dan pembangunan pondok pesantren.",
-      link: "/program/pembangunan-pondok",
+      link: "/components/program/pembangunan-pondok",
     },
   ];
 
@@ -70,14 +72,18 @@ export default function Program() {
               <p className="mt-4 text-lg text-gray-600">
                 {program.description.length > 150
                   ? program.description.substring(0, 150) + "..."
+
                   : program.description}
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="mt-auto bg-green-600 text-white px-6 py-3 rounded-lg shadow transition duration-300 hover:bg-green-700 hover:shadow-xl"
-              >
-                <Link href={program.link}>Learn More</Link>
-              </motion.button>
+
+<MotionLink
+  href={program.link}
+  whileHover={{ scale: 1.05 }}
+  className="mt-auto inline-block text-center bg-green-600 text-white px-6 py-3 rounded-lg shadow transition duration-300 hover:bg-green-700 hover:shadow-xl"
+>
+  Learn More
+</MotionLink>
+
             </motion.div>
           ))}
         </div>
