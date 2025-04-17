@@ -17,18 +17,18 @@ export default function Program() {
     {
       title: "Beasiswa Santri",
       description: "Bantuan pendidikan untuk santri kurang mampu.",
-      link: "/components/program/beasiswa-santri",
+      link: "/program/beasiswa-santri",
     },
     {
       title: "Orang Tua Asuh",
       description:
         "Program Orang Tua Asuh Santri Yatim Piatu adalah inisiatif mulia dari Pondok Pesantren Khoiro Ummah yang bertujuan untuk memberikan dukungan penuh kepada para santri yatim dan yatim piatu dalam menempuh pendidikan agama dan umum. Melalui program ini, kami mengajak para dermawan untuk mengambil peran sebagai ‘orang tua asuh’ yang peduli terhadap masa depan generasi Islam yang kurang beruntung. Tujuan Program, Bentuk Bantuan Orang Tua Asuh, Nominal Donasi & Skema Asuh, Manfaat Menjadi Orang Tua Asuh, dan banyak lagi...",
-      link: "/components/program/orang-tua-asuh",
+      link: "/program/orang-tua-asuh",
     },
     {
       title: "Pembangunan Pondok",
       description: "Ayo bantu renovasi dan pembangunan pondok pesantren.",
-      link: "/components/program/pembangunan-pondok",
+      link: "/program/pembangunan-pondok",
     },
   ];
 
