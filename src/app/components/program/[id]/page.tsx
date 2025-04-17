@@ -1,6 +1,8 @@
 // app/program/[id]/page.tsx
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
+
 
 // Tipe data untuk Program
 interface Program {
@@ -54,9 +56,12 @@ export default function ProgramDetail({ params }: { params: { id: string } }) {
 
       <p className="max-w-2xl text-lg text-gray-600">{program.description}</p>
       <div className="mt-8">
-        <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300">
+        <Link
+          href="/donasi"
+          className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300"
+        >
           Donasi Sekarang
-        </button>
+        </Link>
       </div>
     </div>
   );
