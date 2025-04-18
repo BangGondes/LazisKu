@@ -20,6 +20,19 @@ interface Program {
   icon: JSX.Element;
 }
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.1,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
 export default function Program() {
   const programList: Program[] = [
     {
@@ -63,9 +76,9 @@ export default function Program() {
     <>
       <div className="flex flex-col items-center text-center py-16 px-4 sm:px-6">
         <motion.h1
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-4xl font-extrabold text-gray-800 leading-snug font-[Poppins]"
         >
           Program Kami ✨
@@ -73,7 +86,7 @@ export default function Program() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
           className="mt-2 text-lg text-gray-500 max-w-lg font-[Poppins]"
         >
           Yuk, temukan program yang paling cocok untukmu dan bergabung bersama
@@ -86,12 +99,14 @@ export default function Program() {
           {programList.map((program, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
               className="flex flex-col bg-white rounded-2xl p-6 sm:p-8 shadow-lg text-center hover:shadow-xl transition-all duration-300"
+              layout
             >
               <div className="flex justify-center">{program.icon}</div>
               <h2 className="text-2xl font-bold text-gray-800 mt-2">
@@ -105,6 +120,7 @@ export default function Program() {
               <MotionLink
                 href={program.link}
                 whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
                 className="mt-auto inline-block bg-green-600 text-white px-5 py-2.5 rounded-lg shadow hover:bg-green-700 transition font-semibold text-sm mt-6"
               >
                 Selengkapnya
