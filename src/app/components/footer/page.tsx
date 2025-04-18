@@ -82,15 +82,22 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* CTA Donasi */}
-            {/* 
-            <Link
-              href="/donasi"
-              className="inline-block mt-4 px-5 py-2 bg-green-500 text-white text-sm rounded-full hover:bg-green-600 transition"
-            >
-              Donasi Sekarang
-            </Link> 
-            */}
+            {/* CTA Donasi  */}
+
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 mt-6">
+              <Link
+                href="/donasi"
+                className="px-5 py-2 bg-green-500 text-white text-sm rounded-full hover:bg-green-600 transition"
+              >
+                Donasi Sekarang
+              </Link>
+              <Link
+                href="/kalkulator"
+                className="px-5 py-2 bg-green-500 text-white text-sm rounded-full hover:bg-green-600 transition"
+              >
+                Kalkulator Zakat
+              </Link>
+            </div>
           </div>
         </div>
 
