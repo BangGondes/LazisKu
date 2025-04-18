@@ -30,6 +30,11 @@ export default function Program() {
       description: "Ayo bantu renovasi dan pembangunan pondok pesantren.",
       link: "/program/pembangunan-pondok",
     },
+      {
+      title: "Qurban",
+      description: "Ayo bantu renovasi dan pembangunan pondok pesantren.",
+      link: "/program/pembangunan-pondok",
+    },
   ];
 
   return (
