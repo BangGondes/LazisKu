@@ -37,7 +37,7 @@ export default function Hero() {
     <Card className="mt-0 border-none shadow-xl bg-gray-50 flex flex-col-reverse lg:flex-row items-center justify-between px-4 py-6 sm:px-6 sm:py-10 lg:p-16 gap-6 lg:gap-16">
       {/* Kontainer Teks */}
       <div className="mt-12 lg:mt-24 flex-1 text-center lg:text-left px-4 sm:px-0">
-        <h1 className="text-3xl lg:text-6xl font-extrabold text-gray-900 leading-tight font-['Montserrat']">
+        <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight font-['Montserrat']">
           Mulai Perjalanan Kebaikanmu
         </h1>
         <p className="mt-4 text-lg text-gray-600">
