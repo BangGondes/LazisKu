@@ -10,9 +10,9 @@ interface Program {
 }
 
 interface ProgramPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 // Data statis
@@ -45,8 +45,7 @@ export const metadata = {
 };
 
 export default async function ProgramDetail({ params }: ProgramPageProps) {
-  // Pastikan params.id diakses dengan await
-  const programId = (await params).id;
+  const { id: programId } = await params; // Tunggu params untuk di-resolve
   const program = programList.find((item) => item.id === programId);
 
   if (!program) return notFound();
