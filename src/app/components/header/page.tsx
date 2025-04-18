@@ -30,7 +30,7 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="fixed top-2 left-1/2 transform -translate-x-1/2 w-[90%] z-50 p-4 lg:p-6 bg-white/30 backdrop-blur-md shadow-md rounded-2xl flex items-center justify-between lg:grid lg:grid-cols-3 gap-x-32">
+    <header className="fixed top-2 left-1/2 transform -translate-x-1/2 w-[90%] z-50 p-3 lg:p-4 bg-white/30 backdrop-blur-md shadow-md rounded-4xl flex items-center justify-between lg:grid lg:grid-cols-3 gap-x-32">
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2">
         <p className="text-2xl font-extrabold text-white bg-green-500 rounded-full p-1 w-10 h-10 flex items-center justify-center font-poppins">
